@@ -10,6 +10,11 @@ import './assets/css/global.css'
 // 挂载axios到Vue的原型对象上，每个vue组件通过this可以访问http，发起Ajax请求
 import axios from 'axios'
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
+axios.interceptors.request.use(config => {
+    config.headers.Authorization = window.sessionStorage.getItem('token')
+        // 必须返回
+    return config
+})
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
