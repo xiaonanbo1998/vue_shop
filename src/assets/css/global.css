@@ -26,3 +26,10 @@ body,
 .el-pagination {
     margin-top: 15px;
 }
+
+
+/* 级联弹框高度过长 */
+
+.el-cascader-menu {
+    height: 300px;
+}

@@ -6,6 +6,8 @@ import './plugins/element.js'
 import './assets/fonts/iconfont.css'
 // 导入全局样式表
 import './assets/css/global.css'
+// 导入第三方依赖/插件
+import TreeTable from 'vue-table-with-tree-grid'
 
 // 挂载axios到Vue的原型对象上，每个vue组件通过this可以访问http，发起Ajax请求
 import axios from 'axios'
@@ -18,6 +20,8 @@ axios.interceptors.request.use(config => {
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
+    // 手动注册，全局可用
+Vue.component('tree-table', TreeTable)
 
 new Vue({
         router,
